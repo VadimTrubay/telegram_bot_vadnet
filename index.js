@@ -1,8 +1,10 @@
+import {config} from 'dotenv'
 import TelegramBot from "node-telegram-bot-api";
 import {gameOptions, againOptions} from "./options.js";
 
+config()
 
-const token = '7058894670:AAEk1J5y51h3H_2CxOoqbsertF8AhbSQ9f0'
+const token = process.env.TELEGRAM_API_TOKEN
 
 const bot = new TelegramBot(token, {polling: true});
 
@@ -36,8 +38,8 @@ const start = () => {
     const chatId = msg.chat.id;
 
     if (text === '/start') {
-      await bot.sendSticker(chatId, 'https://sl.combot.org/dev_pack/webp/13xf09f9982.webp')
-      return bot.sendMessage(chatId, `Wellcome from vadnet Bot`)
+      await bot.sendSticker(chatId, 'https://sl.combot.org/wot7777/webp/5xf09f98b6.webp')
+      return bot.sendMessage(chatId, `Wellcome from telegram bot vadnet`)
     }
     if (text === '/info') {
       return bot.sendMessage(chatId, `your name: ${name}`)
