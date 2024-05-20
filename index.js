@@ -1,12 +1,10 @@
-// import {config} from 'dotenv'
+import {config} from 'dotenv'
 import TelegramBot from "node-telegram-bot-api";
 import {gameOptions, againOptions} from "./options.js";
 
-// config()
-//
-// const token = process.env.TELEGRAM_API_TOKEN
-// TElEGRAM_API_TOKEN='7058894670:AAEk1J5y51h3H_2CxOoqbsertF8AhbSQ9f0'
-const token='7058894670:AAEk1J5y51h3H_2CxOoqbsertF8AhbSQ9f0'
+config()
+
+const token = process.env.TELEGRAM_API_TOKEN
 const bot = new TelegramBot(token, {polling: true});
 
 let chats = {};
